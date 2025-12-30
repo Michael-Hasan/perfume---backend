@@ -1,0 +1,62 @@
+<%- include('includes/header') %>
+
+<link rel="stylesheet" href="/css/signup.css" />
+
+<body>
+  <section class="signup-root">
+    <form
+      class="signup-form"
+      action="/admin/signup"
+      method="POST"
+      enctype="multipart/form-data"
+      onsubmit="return validateSignUpForm()"
+    >
+      <h1>WELCOME</h1>
+      <p class="subtitle">Private fragrance collection</p>
+
+      <div class="row">
+        <input type="text" name="memberNick" placeholder="Name" required />
+        <input
+          type="text"
+          name="memberPhone"
+          placeholder="Phone number"
+          required
+        />
+      </div>
+
+      <div class="row">
+        <input
+          type="password"
+          name="memberPassword"
+          placeholder="Password"
+          required
+        />
+        <input
+          type="password"
+          name="confirmPassword"
+          placeholder="Repeat password"
+          required
+        />
+      </div>
+
+      <div class="upload">
+        <label class="upload-btn">
+          Upload profile image
+          <input type="file" name="memberImage" hidden />
+        </label>
+        <span>jpg / png / jpeg</span>
+      </div>
+
+      <input name="memberType" value="STORE" hidden />
+
+      <button type="submit">CREATE ACCOUNT</button>
+
+      <div class="footer">
+        Already have an account?
+        <a href="/admin/login">Login</a>
+      </div>
+    </form>
+  </section>
+</body>
+
+<%- include('includes/footer') %>

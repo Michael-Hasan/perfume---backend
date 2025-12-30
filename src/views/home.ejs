@@ -1,0 +1,35 @@
+<%- include('includes/header') %>
+
+<link rel="stylesheet" href="/css/home.css" />
+
+<section class="hero">
+  <!-- Background Video -->
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="/video/perfume.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Soft overlay -->
+  <div class="hero-overlay"></div>
+
+  <!-- Content -->
+  <div class="hero-content">
+    <span class="hero-collection">PRIVATE COLLECTION</span>
+    <h1>REGISTAN PERFUME</h1>
+    <p>Luxury fragrance beyond time</p>
+
+    <% if (!member) { %>
+    <div class="hero-actions">
+      <a href="/admin/login">LOGIN</a>
+      <a href="/admin/signup" class="outline">SIGN UP</a>
+    </div>
+    <% } else { %>
+    <div class="hero-actions">
+      <a href="/admin/furniture/all">PERFUMES</a>
+      <a href="/admin/user/all" class="outline">USERS</a>
+      <a href="/admin/logout" class="outline">LOGOUT</a>
+    </div>
+    <% } %>
+  </div>
+</section>
+
+<%- include('includes/footer') %>

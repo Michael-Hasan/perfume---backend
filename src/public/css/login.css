@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Page background */
+.login-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url("/img/perfume4.png") no-repeat center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 12%;
+}
+
+/* Dark overlay for readability */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.75)
+  );
+}
+
+/* Login content */
+.login-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-align: center;
+  gap: 22px;
+}
+
+/* Brand */
+.login-content h1 {
+  font-size: 3.2rem;
+  font-weight: 300;
+  letter-spacing: 4px;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  opacity: 0.85;
+  margin-bottom: 25px;
+}
+
+/* Inputs */
+.login-content input {
+  width: 320px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 12px 0;
+  font-size: 1rem;
+  color: white;
+  text-align: center;
+}
+
+.login-content input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.login-content input:focus {
+  outline: none;
+  border-bottom-color: white;
+}
+
+/* Button */
+.login-content button {
+  margin-top: 30px;
+  padding: 12px 60px;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.login-content button:hover {
+  background: white;
+  color: black;
+}
+
+/* Links */
+.links {
+  margin-top: 30px;
+  display: flex;
+  gap: 35px;
+}
+
+.links a {
+  color: white;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.links a:hover {
+  opacity: 1;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .login-page {
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .login-content h1 {
+    font-size: 2.4rem;
+  }
+
+  .login-content input {
+    width: 260px;
+  }
+}

@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background: radial-gradient(circle at top, #1a1a1a, #0b0b0b 70%);
+  color: white;
+}
+
+/* Centered layout */
+.signup-root {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Form */
+.signup-form {
+  width: 520px;
+  padding: 60px;
+  border-radius: 18px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+/* Brand */
+.signup-form h1 {
+  text-align: center;
+  letter-spacing: 8px;
+  margin-bottom: 10px;
+  font-size: 34px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 13px;
+  opacity: 0.6;
+  margin-bottom: 45px;
+}
+
+/* Inputs */
+.row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.signup-form input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  font-size: 15px;
+}
+
+.signup-form input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.signup-form input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Upload */
+.upload {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 35px 0 45px;
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.upload-btn {
+  padding: 12px 22px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.upload-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Button */
+.signup-form button {
+  width: 100%;
+  padding: 16px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #c49b52, #8b5a2b);
+  color: white;
+  font-size: 14px;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s;
+}
+
+.signup-form button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+  margin-top: 35px;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.footer a {
+  color: #c49b52;
+  text-decoration: none;
+}

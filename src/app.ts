@@ -1,0 +1,83 @@
+import express from "express";
+import path from "path";
+import RouterAdmin from "./router_admin";
+import router from "./router";
+import morgan from "morgan";
+import { MORGAN_FORMAT } from "./libs/config";
+import session from "express-session";
+import { Server as SocketIOServer } from "socket.io";
+import ConnectMongoDB from "connect-mongodb-session";
+import { T } from "./libs/types/common";
+import cookieParser from "cookie-parser";
+import cors from "cors";
+import http from "http";
+
+const MongoDBStore = ConnectMongoDB(session);
+const store = new MongoDBStore({
+  uri: String(process.env.MONGO_URL),
+  collection: "session",
+});
+
+/** 1-Entrance */
+const app = express();
+
+app.use(express.static(path.join(__dirname, "public")));
+app.use("/uploads", express.static("./uploads"));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(
+  cors({
+    credentials: true,
+    origin: true,
+  })
+);
+app.use(morgan(MORGAN_FORMAT));
+app.use(cookieParser());
+
+/* 2-Sessions */
+
+app.use(
+  session({
+    secret: String(process.env.SESSION_SECRET),
+    cookie: {
+      maxAge: 1000 * 3600 * 60, // 60h
+    },
+    store: store,
+    resave: true,
+    saveUninitialized: true,
+  })
+);
+
+app.use(function (req, res, next) {
+  const sessionInstance = req.session as T;
+  res.locals.member = sessionInstance.member;
+  next();
+});
+
+/** 3-Views */
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+
+/** 4-Routers */
+
+app.use("/admin", RouterAdmin);
+app.use("/", router);
+
+const server = http.createServer(app);
+const io = new SocketIOServer(server, {
+  cors: {
+    origin: "*",
+    credentials: true,
+  },
+});
+
+let summaryClient = 0;
+
+io.on("connection", (socket) => {
+  console.log(`Connention & Total clients: ${++summaryClient}`);
+  socket.on("disconnect", () => {
+    console.log(`Disconnect & Total clients: ${--summaryClient}`);
+  });
+});
+
+export { app, server, io };

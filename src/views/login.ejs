@@ -1,0 +1,30 @@
+<%- include('includes/header') %>
+
+<link rel="stylesheet" href="/css/login.css" />
+
+<section class="login-page">
+  <div class="overlay"></div>
+
+  <form class="login-content" action="/admin/login" method="POST">
+    <h1>REGISTAN PERFUME</h1>
+    <p class="subtitle">Private access</p>
+
+    <input type="text" name="memberNick" placeholder="Username" required />
+
+    <input
+      type="password"
+      name="memberPassword"
+      placeholder="Password"
+      required
+    />
+
+    <button type="submit">LOGIN</button>
+
+    <div class="links">
+      <a href="/admin">Home</a>
+      <a href="/admin/signup">Sign up</a>
+    </div>
+  </form>
+</section>
+
+<%- include('includes/footer') %>
