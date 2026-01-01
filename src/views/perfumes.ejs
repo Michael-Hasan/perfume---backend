@@ -1,18 +1,18 @@
 <%- include('includes/header') %>
 
-<link rel="stylesheet" type="text/css" href="/css/furnitures.css" />
+<link rel="stylesheet" type="text/css" href="/css/perfumes.css" />
 
 <body>
   <!-- <img src="/img/2.jpeg" alt="img jpg " class="bg-img"> -->
 
-  <div class="furnitures-container">
+  <div class="perfumes-container">
     <div class="navigation-menu">
       <ul class="nav justify-content-center">
         <li class="nav-item" style="cursor: pointer">
           <a class="nav-link active" href="/admin/">Home</a>
         </li>
         <li class="nav-item" style="cursor: pointer">
-          <a class="nav-link" href="/admin/furniture/all">Perfumes</a>
+          <a class="nav-link" href="/admin/perfume/all">Perfumes</a>
         </li>
         <li class="nav-item" style="cursor: pointer">
           <a class="nav-link" href="/admin/user/all">Users</a>
@@ -40,20 +40,20 @@
                 <th scope="col">Status</th>
               </tr>
             </thead>
-            <% furnitures.map(function(value, key) { %>
+            <% perfumes.map(function(value, key) { %>
               <tbody style="background: white">
                 <td><%= key + 1 %></td>
-                <td><%= value.furnitureName %></td>
-                <td><%= value.furnitureCollection %></td>
-                <td><%= value.furnituresize %></td>
-                <td><%= value.furnitureVolume %></td>
-                <td><%= value.furniturePrice %></td>
-                <td><%= value.furnitureLeftCount %></td>
+                <td><%= value.perfumeName %></td>
+                <td><%= value.perfumeCollection %></td>
+                <td><%= value.perfumeSize %></td>
+                <td><%= value.perfumeBrand %></td>
+                <td><%= value.perfumePrice %></td>
+                <td><%= value.perfumeLeftCount %></td>
                 <td>
-                  <select class="spec-select new-furniture-status" id="<%= value._id %>">
-                    <option value="OUT_OF_STOCK" <%= value.furnitureStatus === "OUT_OF_STOCK" ? "selected" : "" %>>Out of Stock</option>
-                    <option value="AVAILABLE" <%= value.furnitureStatus === "AVAILABLE" ? "selected" : "" %>>Available</option>
-                    <option value="DELETE" <%= value.furnitureStatus === "DELETE" ? "selected" : "" %>>Delete</option>
+                  <select class="spec-select new-perfume-status" id="<%= value._id %>">
+                    <option value="OUT_OF_STOCK" <%= value.perfumeStatus === "OUT_OF_STOCK" ? "selected" : "" %>>Out of Stock</option>
+                    <option value="AVAILABLE" <%= value.perfumeStatus === "AVAILABLE" ? "selected" : "" %>>Available</option>
+                    <option value="DELETE" <%= value.perfumeStatus === "DELETE" ? "selected" : "" %>>Delete</option>
                   </select>
                   
                 </td>
@@ -68,7 +68,7 @@
 
         <form
           onsubmit="return validateForm()"
-          action="/admin/furniture/create"
+          action="/admin/perfume/create"
           method="POST"
           class="dish-container"
           enctype="multipart/form-data"
@@ -80,54 +80,54 @@
           <div class="login-input-frame">
             <div class="long-input">
               <label>Perfume Name</label>
-              <input type="text" placeholder="Name" name="furnitureName" class="furniture-name" />
+              <input type="text" placeholder="Name" name="perfumeName" class="perfume-name" />
             </div>
-            <input name="furniturestatus" value="OUT_OF_STOCK" class="furniture-status" hidden />
+            <input name="perfumestatus" value="OUT_OF_STOCK" class="perfume-status" hidden />
           </div>
 
           <div class="half-input-frame">
             <div class="half-input">
               <label>Perfume Price</label>
-              <input type="number" placeholder="Price" name="furniturePrice" class="furniture-price" />
+              <input type="number" placeholder="Price" name="perfumePrice" class="perfume-price" />
             </div>
             <div class="half-input">
               <label>Perfume Stock Count</label>
-              <input type="number" placeholder="Counts" name="furnitureLeftCount" class="furniture-left-count" />
+              <input type="number" placeholder="Counts" name="perfumeLeftCount" class="perfume-left-count" />
             </div>
           </div>
 
           <div class="half-input-frame">
             <div class="half-input">
               <label>Perfume Collection</label>
-              <select class="furniture-collection" name="furnitureCollection">
-                <option value="BEDROOM">Eau de Cologne</option>
-                <option value="LIVING_ROOM">Eau de Toilette</option>
-                <option value="DINING_ROOM">Eau de Parfum</option>
-                <option value="OFFICE">Parfume</option>
-                <option value="OUTDOOR">Aroma</option>
+              <select class="perfume-collection" name="perfumeCollection">
+                <option value="Eau de Cologne">Eau de Cologne</option>
+                <option value="Eau de Toilette">Eau de Toilette</option>
+                <option value="Eau de Parfum">Eau de Parfum</option>
+                <option value="Parfume">Parfume</option>
+                <option value="Aroma">Aroma</option>
               </select>
             </div>
             <div class="half-input">
               <label>Perfume Size</label>
-              <select class="furniture-size" name="furnituresize">
-                <option value="SMALL">Small</option>
-                <option value="MEDIUM">Medium</option>
-                <option value="LARGE">Large</option>
+              <select class="perfume-size" name="perfumeSize">
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
               </select>
             </div>
             <div class="half-input">
               <label>Perfume Brand</label>
-              <select class="furniture-volume" name="furnitureVolume">
-                <option value="SINGLE">Chanel</option>
-                <option value="DOUBLE">Dior</option>
-                <option value="FAMILY">Tom Ford</option>
+              <select class="perfume-brand" name="perfumeBrand">
+                <option value="Chanel">Chanel</option>
+                <option value="Dior">Dior</option>
+                <option value="Tom Ford">Tom Ford</option>
               </select>
             </div>
           </div>
 
           <div class="long-input">
             <label>Perfume Description</label>
-            <textarea name="furnitureDesc" class="furniture-desc"></textarea>
+            <textarea name="perfumeDesc" class="perfume-desc"></textarea>
           </div>
 
           <div class="img-frame">
@@ -145,7 +145,7 @@
                   <input
                     type="file"
                     id="file-<%= i %>"
-                    name="furnitureImages"
+                    name="perfumeImages"
                     class="image-<%= i %>"
                     style="display: none;" 
                     <%= i === 1 ? 'required' : '' %>
@@ -167,7 +167,7 @@
     </div>
   
 </div>
-  <script type="text/javascript" src="/js/furnitures.js"></script>
+  <script type="text/javascript" src="/js/perfume.js"></script>
 </body>
 
 <%- include('includes/footer') %>

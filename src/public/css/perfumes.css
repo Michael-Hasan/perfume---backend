@@ -8,7 +8,7 @@
   z-index: -1;
 }
 
-.furnitures-container {
+.perfumes-container {
   position: relative;
   width: auto;
   height: auto;
@@ -19,7 +19,7 @@
   background: linear-gradient(135deg, #1c1c1c, #2a2a2a, #3a3a3a);
 }
 
-.furnitures-container img {
+.perfumes-container img {
   width: 100%;
   height: auto;
   object-fit: cover; /* optional */
@@ -31,20 +31,20 @@
     rgba(150, 131, 131, 0.2)
   );
 }
-.furnitures-container a {
+.perfumes-container a {
   text-decoration: none;
   color: #000000;
 }
 
-.furnitures-container .nav-item a {
+.perfumes-container .nav-item a {
   color: #e3c08d;
 }
 
-.furnitures-container .nav-item a.disabled {
+.perfumes-container .nav-item a.disabled {
   color: #898071;
 }
 
-.furnitures-container .navigation-menu {
+.perfumes-container .navigation-menu {
   position: absolute;
   z-index: 10000;
   top: 1%;
@@ -53,7 +53,7 @@
   font-family: monospace;
 }
 
-.furnitures-container .store-menu-frame {
+.perfumes-container .store-menu-frame {
   position: relative;
   padding-bottom: 80px;
   width: 100%;
@@ -64,7 +64,7 @@
   align-items: center;
 }
 
-.furnitures-container .store-menu-frame .board {
+.perfumes-container .store-menu-frame .board {
   position: relative;
   margin-top: 100px;
   width: 1320px;
@@ -74,7 +74,7 @@
   align-items: center;
 }
 
-.furnitures-container .board .dishes-table {
+.perfumes-container .board .dishes-table {
   position: relative;
   width: 100%;
   height: auto;
@@ -84,7 +84,7 @@
   align-items: center;
 }
 
-.furnitures-container .board .dish-container {
+.perfumes-container .board .dish-container {
   position: relative;
   margin-top: 20px;
   width: 100%;
@@ -95,7 +95,7 @@
   align-items: center;
 }
 
-.furnitures-container .new-dish-txt {
+.perfumes-container .new-dish-txt {
   font-family: "Source Serif Pro";
   font-style: normal;
   font-weight: 400;
@@ -104,7 +104,7 @@
   color: #ffffff;
 }
 
-.furnitures-container .long-input {
+.perfumes-container .long-input {
   position: relative;
   margin-top: 25px;
   width: 100%;
@@ -113,7 +113,7 @@
   flex-direction: column;
 }
 
-.furnitures-container .long-input label {
+.perfumes-container .long-input label {
   font-family: "Source Serif Pro";
   font-style: normal;
   font-weight: 400;
@@ -122,7 +122,7 @@
   color: #ffffff;
 }
 
-.furnitures-container .long-input input {
+.perfumes-container .long-input input {
   position: relative;
   margin-top: 10px;
   padding-left: 20px;
@@ -140,7 +140,7 @@
   color: #4f547b;
 }
 
-.furnitures-container .long-input textarea {
+.perfumes-container .long-input textarea {
   position: relative;
   margin-top: 10px;
   padding: 20px;
@@ -158,7 +158,7 @@
   color: #4f547b;
 }
 
-.furnitures-container .half-input select {
+.perfumes-container .half-input select {
   position: relative;
   margin-top: 10px;
   padding: 0px 20px;
@@ -177,12 +177,12 @@
   color: #4f547b;
 }
 
-.furnitures-container select:focus {
+.perfumes-container select:focus {
   min-width: 100%;
   width: auto;
 }
 
-.furnitures-container .long-input select {
+.perfumes-container .long-input select {
   position: relative;
   margin-top: 10px;
   padding: 0px 20px;
@@ -201,7 +201,7 @@
   color: #4f547b;
 }
 
-.furnitures-container .dish-container .half-input-frame {
+.perfumes-container .dish-container .half-input-frame {
   position: relative;
   margin-top: 25px;
   width: 100%;
@@ -211,7 +211,7 @@
   justify-content: space-between;
 }
 
-.furnitures-container .half-input-frame .half-input {
+.perfumes-container .half-input-frame .half-input {
   position: relative;
   width: 49%;
   height: auto;
@@ -219,7 +219,7 @@
   flex-direction: column;
 }
 
-.furnitures-container .half-input label {
+.perfumes-container .half-input label {
   font-family: "Source Serif Pro";
   font-style: normal;
   font-weight: 400;
@@ -228,7 +228,7 @@
   color: #ffffff;
 }
 
-.furnitures-container .half-input input {
+.perfumes-container .half-input input {
   position: relative;
   margin-top: 10px;
   padding-left: 20px;
@@ -240,7 +240,7 @@
   border-radius: 5px;
 }
 
-.furnitures-container .media-frame {
+.perfumes-container .media-frame {
   position: relative;
   margin-top: 10px;
   width: 100%;
@@ -250,7 +250,7 @@
   justify-content: space-between;
 }
 
-.furnitures-container .media-frame .upload-img-box {
+.perfumes-container .media-frame .upload-img-box {
   position: relative;
   width: 19%;
   height: 100%;
@@ -261,7 +261,7 @@
   cursor: pointer;
 }
 
-.furnitures-container .upload-img-box img {
+.perfumes-container .upload-img-box img {
   position: relative;
   width: 100%;
   height: 100%;
@@ -269,7 +269,7 @@
   border-radius: 10px;
 }
 
-.furnitures-container .img-frame {
+.perfumes-container .img-frame {
   position: relative;
   width: 100%;
   display: flex;
@@ -279,7 +279,7 @@
   display: none;
 }
 
-.furnitures-container .img-frame label {
+.perfumes-container .img-frame label {
   margin-top: 30px;
   font-family: "Source Serif Pro";
   font-style: normal;
@@ -289,7 +289,7 @@
   color: #ffffff;
 }
 
-.furnitures-container #file {
+.perfumes-container #file {
   opacity: 0;
   border: none;
   border-radius: 10px;
@@ -302,7 +302,7 @@
   cursor: pointer;
 }
 
-.furnitures-container .operation-buttons {
+.perfumes-container .operation-buttons {
   margin-top: 20px;
   display: flex;
   flex-direction: row;
@@ -310,7 +310,7 @@
   align-items: center;
 }
 
-.furnitures-container .spec-select {
+.perfumes-container .spec-select {
   position: relative;
   padding: 0px 7px;
   height: 27px;
@@ -325,26 +325,26 @@
   color: #4f547b;
 }
 
-.furnitures-container table td,
+.perfumes-container table td,
 table th {
   text-align: center;
   vertical-align: middle;
 }
 
-.furnitures-container .switch {
+.perfumes-container .switch {
   position: relative;
   display: inline-block;
   width: 50px;
   height: 20px;
 }
 
-.furnitures-container .switch input {
+.perfumes-container .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-.furnitures-container .slider {
+.perfumes-container .slider {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -356,7 +356,7 @@ table th {
   transition: 0.4s;
 }
 
-.furnitures-container .slider:before {
+.perfumes-container .slider:before {
   position: absolute;
   content: "";
   height: 14px;
@@ -368,24 +368,24 @@ table th {
   transition: 0.4s;
 }
 
-.furnitures-container input:checked + .slider {
+.perfumes-container input:checked + .slider {
   background-color: #2196f3;
 }
 
-.furnitures-container input:focus + .slider {
+.perfumes-container input:focus + .slider {
   box-shadow: 0 0 1px #2196f3;
 }
 
-.furnitures-container input:checked + .slider:before {
+.perfumes-container input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
 
-.furnitures-container .slider.round {
+.perfumes-container .slider.round {
   border-radius: 34px;
 }
 
-.furnitures-container .slider.round:before {
+.perfumes-container .slider.round:before {
   border-radius: 50%;
 }

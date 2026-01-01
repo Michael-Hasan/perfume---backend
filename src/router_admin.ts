@@ -1,54 +1,59 @@
 import express from "express";
 import storeController from "./controllers/store.controller";
-import furnitureController from "./controllers/furniture.controller"; 
+import perfumeController from "./controllers/perfume.controller";
 import makeUploader from "./libs/utils/uploader";
 
 /* Store*/
-const uploadFurnitureImages = makeUploader("furnitures").array("furnitureImages", 5);
+const uploadPerfumeImages = makeUploader("perfumes").array("perfumeImages", 5);
 const routerAdmin = express.Router();
 
-
-routerAdmin.get("/", storeController.goHome); 
-
-routerAdmin
-.get("/login", storeController.getLogin)
-.post("/login", storeController.processLogin);
-
+routerAdmin.get("/", storeController.goHome);
 
 routerAdmin
-.get("/signup", storeController.getSignUp )
-.post("/signup", 
+  .get("/login", storeController.getLogin)
+  .post("/login", storeController.processLogin);
+
+routerAdmin
+  .get("/signup", storeController.getSignUp)
+  .post(
+    "/signup",
     makeUploader("members").single("memberImage"),
-    storeController.processSignUp);
+    storeController.processSignUp
+  );
 
 routerAdmin.get("/check-me", storeController.checkAuthSession);
-routerAdmin.get("/logout", storeController.LogOut)
+routerAdmin.get("/logout", storeController.LogOut);
 
+/* Perfume*/
+routerAdmin.get(
+  "/perfume/all",
+  storeController.verifyStore,
+  perfumeController.getAllPerfumes
+);
 
-/* Furniture*/
-routerAdmin.get("/furniture/all", 
-    storeController.verifyStore,
-    furnitureController.getAllFurnitures);
+routerAdmin.post(
+  "/perfume/create",
+  storeController.verifyStore,
+  uploadPerfumeImages,
+  perfumeController.createNewProduct
+);
+routerAdmin.post(
+  "/perfume/:id",
+  storeController.verifyStore,
+  perfumeController.updateChosenPerfume
+);
 
-routerAdmin.post("/furniture/create",
-    storeController.verifyStore,
-    uploadFurnitureImages,   
-    furnitureController.createNewProduct);
-routerAdmin.post("/furniture/:id", 
-    storeController.verifyStore,
-    furnitureController.updateChosenFurniture);  
+routerAdmin.get(
+  "/user/all",
+  storeController.verifyStore,
+  storeController.getUsers
+);
 
-
-routerAdmin.get("/user/all",
-    storeController.verifyStore,
-    storeController.getUsers
-)
-
-routerAdmin.post("/user/edit",
-    storeController.verifyStore,
-    storeController.updateChosenUser
-)
-
+routerAdmin.post(
+  "/user/edit",
+  storeController.verifyStore,
+  storeController.updateChosenUser
+);
 
 /* Users*/
 export default routerAdmin;

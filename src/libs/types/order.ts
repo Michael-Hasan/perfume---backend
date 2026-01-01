@@ -1,44 +1,43 @@
-import {ObjectId} from "mongoose";
+import { ObjectId } from "mongoose";
 import { OrderStatus } from "../enums/order.enum";
-import { Furniture } from "./furniture";
+import { Perfume } from "./perfume";
 
 export interface OrderItem {
-    _id: ObjectId;
-    itemQuantity:Number;
-    itemPrice: Number;
-    orderId: ObjectId;
-    furnitureId: ObjectId;
-    createAt:Date;
-    updatedAt:Date;
+  _id: ObjectId;
+  itemQuantity: Number;
+  itemPrice: Number;
+  orderId: ObjectId;
+  PerfumeId: ObjectId;
+  createAt: Date;
+  updatedAt: Date;
 }
 
-export interface Order{
-    _id: ObjectId;
-    orderTotal: number;
-    orderStatus: OrderStatus;
-    memberId: ObjectId;
-    createAt: Date;
-    updatedAt: Date;
-    // From aggregations
-    orderItems:[];
-    furnitureDate: Furniture[];
+export interface Order {
+  _id: ObjectId;
+  orderTotal: number;
+  orderStatus: OrderStatus;
+  memberId: ObjectId;
+  createAt: Date;
+  updatedAt: Date;
+  // From aggregations
+  orderItems: [];
+  perfumeDate: Perfume[];
 }
 
 export interface OrderItemInput {
-    itemQuantity: number,
-    itemPrice: number,
-    furnitureId:ObjectId,
-    orderId?:ObjectId;
+  itemQuantity: number;
+  itemPrice: number;
+  perfumeId: ObjectId;
+  orderId?: ObjectId;
 }
 
 export interface OrderInquiry {
-    page:number,
-    limit:number,
-    orderStatus: OrderStatus;
+  page: number;
+  limit: number;
+  orderStatus: OrderStatus;
 }
 
 export interface OrderUpdateInput {
-    orderId: string;
-    orderStatus: OrderStatus;
+  orderId: string;
+  orderStatus: OrderStatus;
 }
-

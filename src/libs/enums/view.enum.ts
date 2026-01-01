@@ -1,3 +1,3 @@
 export enum ViewGroup {
-    FURNITURE = "FURNITURE"
+  PERFUME = "PERFUME",
 }
